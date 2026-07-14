@@ -1,17 +1,31 @@
+# Build
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Kotlin / misc
 .kotlin
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
+*.idea_modules/
+
+# Keep useful IDE settings optional (uncomment if needed)
+# !.idea/codeStyles/
+# !.idea/runConfigurations/
 
 ### Eclipse ###
 .apt_generated
@@ -21,6 +35,7 @@ target/
 .settings
 .springBeans
 .sts4-cache
+bin/
 
 ### NetBeans ###
 /nbproject/private/
@@ -28,12 +43,41 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
+### VS Code / Cursor ###
 .vscode/
+.cursor/
+!.cursor/rules/
 
-### Mac OS ###
+### OS ###
 .DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*$RECYCLE.BIN/
+
+### Env / secrets ###
+.env
+.env.*
+*.env
+*.pem
+*.key
+credentials.json
+secrets.json
+local.properties
+
+### Uploads / runtime ###
+# Keep placeholder images tracked; ignore accidental large dumps if needed
+# src/main/webapp/images/uploads/
+
+### Maven wrapper download cache ###
+.mvn/wrapper/maven-wrapper.jar.download
+
+### Logs & temp ###
+*.tmp
+*.bak
+*.swp
+*~
+logs/
+tmp/
