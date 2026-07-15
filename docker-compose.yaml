@@ -1,0 +1,33 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-bookstore
+    ports:
+      - "3307:3306"
+
+    networks:
+      - bookstore-network
+
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: bookstore
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  bookstore:
+    depends_on:
+      - mysql
+    image: online-bookstore
+    container_name: bookstore
+    ports:
+      - "8081:8080"
+
+    networks:
+      - bookstore-network
+
+
+networks:
+  bookstore-network:
+volumes:
+  mysql-data:
