@@ -16,10 +16,14 @@ services:
       - mysql-data:/var/lib/mysql
 
   bookstore:
+    build:
+      context: .
+    image: bookstore
+    container_name: bookstore
+
     depends_on:
       - mysql
-    image: online-bookstore
-    container_name: bookstore
+
     ports:
       - "8081:8080"
 
